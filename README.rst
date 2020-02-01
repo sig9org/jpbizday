@@ -1,6 +1,3 @@
-JPBizDay
-====================================================
-
 .. image:: https://img.shields.io/pypi/v/jpbizday.svg
  :target: https://pypi.org/project/jpbizday/
 .. image:: https://img.shields.io/pypi/l/jpbizday.svg
@@ -10,12 +7,12 @@ JPBizDay
 .. image:: https://img.shields.io/github/contributors/sig9org/jpbizday.svg
  :target: https://github.com/sig9org/jpbizday/graphs/contributors
 
-.. contents:: 目次
-
-概要
-=========================
+JPBizDay
+====================================================
 
 日本の営業日を取得するライブラリです。 `jpholiday <https://pypi.org/project/jpholiday/>`_ に依存しています (作者の `Lalcs <https://github.com/Lalcs>`_ さんに感謝します)。
+
+.. contents::
 
 インストール
 =========================
@@ -29,7 +26,7 @@ pip でインストールします。
 サンプルコード
 =========================
 
-指定日が営業日か、判定する
+指定日が営業日かを判定する
 -------------------------
 
 .. code-block:: python
