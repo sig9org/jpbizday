@@ -12,8 +12,8 @@ JPBizDay
 
 日本の営業日を取得するライブラリです。 `jpholiday <https://pypi.org/project/jpholiday/>`_ に依存しています (作者の `Lalcs <https://github.com/Lalcs>`_ さんに感謝します)。
 
-.. contents:: 目次
-=========================
+.. toctree::
+  :numbered:
 
 インストール
 =========================
