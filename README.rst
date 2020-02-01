@@ -7,24 +7,31 @@ JPBizDay
  :target: https://pypi.org/project/jpbizday/
 .. image:: https://img.shields.io/pypi/pyversions/jpbizday.svg
  :target: https://pypi.org/project/jpbizday/
-.. image:: https://img.shields.io/github/contributors/sig9/jpbizday.svg
- :target: https://github.com/lalcs/jpbizday/graphs/contributors
+.. image:: https://img.shields.io/github/contributors/sig9org/jpbizday.svg
+ :target: https://github.com/sig9org/jpbizday/graphs/contributors
 
-日本の営業日を取得するライブラリ
+概要
+=========================
 
-Installation
------------------
+日本の営業日を取得するライブラリです。 [jpholiday](https://pypi.org/project/jpholiday/) に依存しています (作者の [Lalcs](https://github.com/Lalcs) さんに感謝します)。
+
+インストール
+=========================
+
+pip でインストールします。
 
 .. code-block:: bash
 
     $ pip install jpbizday
 
-Sample Code
------------------
+サンプルコード
+=========================
+
+指定日が営業日か、判定する
+-------------------------
 
 .. code-block:: python
 
-    # 指定日が営業日か、判定します
     > import jpbizday
     > import datetime
     > jpbizday.is_bizday(datetime.date(2020, 1, 1))
@@ -32,9 +39,11 @@ Sample Code
     > jpbizday.is_bizday(datetime.date(2020, 1, 6))
     True
 
+指定年の営業日を取得する
+-------------------------
+
 .. code-block:: python
 
-    # 指定年の営業日を取得します
     > jpbizday.year_bizdays(2020)
     [datetime.date(2020, 1, 6),
      datetime.date(2020, 1, 7),
@@ -56,9 +65,11 @@ Sample Code
     > len(jpbizday.year_bizdays(2020))
     244
 
+指定月の営業日を取得する
+-------------------------
+
 .. code-block:: python
 
-    # 指定月の営業日を取得します
     > jpbizday.month_bizdays(2020, 1)
     [datetime.date(2020, 1, 6),
      datetime.date(2020, 1, 7),
@@ -82,9 +93,11 @@ Sample Code
     > len(jpbizday.month_bizdays(2020, 1))
     19
 
+指定月の営業日を取得する
+-------------------------
+
 .. code-block:: python
 
-    # 指定月の営業日を取得します
     > jpbizday.bizdays(datetime.date(2020, 1, 1), datetime.date(2020, 1, 18))
     [datetime.date(2020, 1, 6),
      datetime.date(2020, 1, 7),
@@ -98,9 +111,11 @@ Sample Code
     > len(jpbizday.bizdays(datetime.date(2020, 1, 1), datetime.date(2020, 1, 18)))
     9
 
+指定月の最初の営業日を取得する
+-------------------------
+
 .. code-block:: python
 
-    # 指定月の最初の営業日を取得します
     > jpbizday.first_bizday(2020, 1)
     datetime.date(2020, 1, 6)
     > jpbizday.first_bizday(datetime.date(2020, 1, 1))
@@ -110,9 +125,11 @@ Sample Code
     > jpbizday.first_bizday(datetime.datetime.today())
     datetime.date(2020, 2, 3)
 
+指定月の最後の営業日を取得する
+-------------------------
+
 .. code-block:: python
 
-    # 指定月の最後の営業日を取得します
     > jpbizday.last_bizday(2020, 5)
     datetime.date(2020, 5, 29)
     > jpbizday.last_bizday(datetime.date(2020, 5, 15))
@@ -122,9 +139,11 @@ Sample Code
     > jpbizday.last_bizday(datetime.datetime.today())
     datetime.date(2020, 2, 28)
 
+指定月の最初の営業日なのかを判定する
+-------------------------
+
 .. code-block:: python
 
-    # 指定月の最初の営業日なのかを判定します
     > jpbizday.is_first_bizday(datetime.date(2020, 1, 1))
     False
     > jpbizday.is_first_bizday(datetime.date(2020, 1, 6))
@@ -134,9 +153,11 @@ Sample Code
     > jpbizday.is_first_bizday(datetime.datetime.today())
     False
 
+指定月の最後の営業日なのかを判定する
+-------------------------
+
 .. code-block:: python
 
-    # 指定月の最後の営業日なのかを判定します
     > jpbizday.is_last_bizday(datetime.date(2020, 1, 31))
     True
     > jpbizday.is_last_bizday(datetime.date(2020, 1, 30))
