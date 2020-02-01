@@ -10,10 +10,12 @@ JPBizDay
 .. image:: https://img.shields.io/github/contributors/sig9org/jpbizday.svg
  :target: https://github.com/sig9org/jpbizday/graphs/contributors
 
+.. contents:: 目次
+
 概要
 =========================
 
-日本の営業日を取得するライブラリです。 [jpholiday](https://pypi.org/project/jpholiday/) に依存しています (作者の [Lalcs](https://github.com/Lalcs) さんに感謝します)。
+日本の営業日を取得するライブラリです。 `jpholiday <https://pypi.org/project/jpholiday/>`_ に依存しています (作者の `Lalcs <https://github.com/Lalcs>`_ さんに感謝します)。
 
 インストール
 =========================
