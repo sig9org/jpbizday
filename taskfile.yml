@@ -1,0 +1,32 @@
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  build:
+    aliases: [b]
+    desc: Build
+    cmds:
+      - pyinstaller build.spec
+
+  format:
+    aliases: [f]
+    desc: Format the source code
+    cmds:
+      - ruff format .
+      - ruff check . --fix
+
+  lint:
+    aliases: [l]
+    desc: Static analysis
+    cmds:
+      - ruff check .
+      - mypy .
+
+  test:
+    aliases: [t]
+    desc: Test
+    cmds:
+      - pytest
