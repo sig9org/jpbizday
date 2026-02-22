@@ -7,36 +7,36 @@ import jpbizday
 
 from . import common as c
 
-YEAR = 2020
-DAYS = 244
-DAYS_OK = [[1, 6]]
-DAYS_NG = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5]]
-DAYS_PER_MONTH = [19, 18, 21, 21, 18, 22, 21, 20, 20, 22, 19, 23]
+YEAR = 2027
+DAYS = 245
+DAYS_OK = [[1, 4], [1, 5]]
+DAYS_NG = [[1, 1], [1, 2], [1, 3]]
+DAYS_PER_MONTH = [19, 18, 22, 21, 18, 22, 21, 21, 20, 20, 20, 23]
 FIRST_BIZ_DAYS = [
-    [1, 6],
-    [2, 3],
-    [3, 2],
+    [1, 4],
+    [2, 1],
+    [3, 1],
     [4, 1],
-    [5, 1],
+    [5, 6],
     [6, 1],
     [7, 1],
-    [8, 3],
+    [8, 2],
     [9, 1],
     [10, 1],
-    [11, 2],
+    [11, 1],
     [12, 1],
 ]
 LAST_BIZ_DAYS = [
-    [1, 31],
-    [2, 28],
+    [1, 29],
+    [2, 26],
     [3, 31],
     [4, 30],
-    [5, 29],
+    [5, 31],
     [6, 30],
-    [7, 31],
+    [7, 30],
     [8, 31],
     [9, 30],
-    [10, 30],
+    [10, 29],
     [11, 30],
     [12, 31],
 ]
@@ -45,15 +45,15 @@ LAST_BIZ_DAYS = [
 def test_bizdays():
     assert (
         len(jpbizday.bizdays(datetime.date(YEAR, 1, 1), datetime.date(YEAR, 1, 18)))
-        == 9
+        == 10
     )
     assert (
-        len(jpbizday.bizdays(datetime.date(YEAR, 1, 1), datetime.date(YEAR, 2, 29)))
+        len(jpbizday.bizdays(datetime.date(YEAR, 1, 1), datetime.date(YEAR, 2, 28)))
         == 37
     )
     assert (
         len(jpbizday.bizdays(datetime.date(YEAR, 5, 1), datetime.date(YEAR, 5, 16)))
-        == 8
+        == 7
     )
 
 

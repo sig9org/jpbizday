@@ -10,7 +10,7 @@ import jpholiday
 
 def is_bizday(day: datetime.date):
     """
-    day が営業日か、否かを判定し、論理値を返します。 1/1 ～ 1/3 は祝日と判定します。 12 月の祝日はカレンダー通りに扱います。
+    dayが営業日か、否かを判定し、論理値を返します。1/1～1/3は祝日と判定します。12月の祝日はカレンダー通りに扱います。
     """
     if jpholiday.is_holiday(day):
         return False
@@ -28,7 +28,7 @@ def is_bizday(day: datetime.date):
 
 def year_bizdays(year: int):
     """
-    year 年の営業日をリストで返します。
+    year年の営業日をリストで返します。
     """
     day = datetime.date(year, 1, 1)
     result = []
@@ -41,7 +41,7 @@ def year_bizdays(year: int):
 
 def month_bizdays(year: int, month: int):
     """
-    year 年 month 月の営業日をリストで返します。
+    year年month月の営業日をリストで返します。
     """
     day = datetime.date(year, month, 1)
     result = []
@@ -54,7 +54,7 @@ def month_bizdays(year: int, month: int):
 
 def bizdays(start: datetime.date, end: datetime.date):
     """
-    start 日から end 日の間の営業日をリストで返します。
+    start日からend日の間の営業日をリストで返します。
     """
     result = []
     while start <= end:
@@ -64,10 +64,17 @@ def bizdays(start: datetime.date, end: datetime.date):
     return result
 
 
+def first_day(year: int, month: int):
+    """
+    year年month月の、最初の日をdatetime.dateで返します。
+    """
+    return datetime.date(year, month, 1)
+
+
 @singledispatch
 def first_bizday(year: int, month: int):
     """
-    year 年 month 月の、最初の営業日を datetime.date で返します。
+    year年month月の、最初の営業日をdatetime.dateで返します。
     """
     day = datetime.date(year, month, 1)
     while not is_bizday(day):
@@ -78,15 +85,23 @@ def first_bizday(year: int, month: int):
 @first_bizday.register(datetime.date)
 def _first_bizday(day: datetime.date):
     """
-    day 日を含む月の、最初の営業日を datetime.date で返します。
+    day日を含む月の、最初の営業日をdatetime.dateで返します。
     """
     return first_bizday(day.year, day.month)
+
+
+def last_day(year: int, month: int):
+    """
+    year年month月の、最後の日をdatetime.dateで返します。
+    """
+    _, lastday = calendar.monthrange(year, month)
+    return datetime.date(year, month, lastday)
 
 
 @singledispatch
 def last_bizday(year: int, month: int):
     """
-    year 年 month 月の、最初の営業日を datetime.date で返します。
+    year年month月の、最後の営業日をdatetime.dateで返します。
     """
     _, lastday = calendar.monthrange(year, month)
     day = datetime.date(year, month, lastday)
@@ -98,14 +113,14 @@ def last_bizday(year: int, month: int):
 @last_bizday.register(datetime.date)
 def _last_bizday(day: datetime.date):
     """
-    day 日を含む月の、最後の営業日を datetime.date で返します。
+    day日を含む月の、最後の営業日をdatetime.dateで返します。
     """
     return last_bizday(day.year, day.month)
 
 
 def is_first_bizday(day: datetime.date):
     """
-    day 日が、その月の最初の営業日か、否かを判定し、論理値を返します。
+    day日 が、その月の最初の営業日か、否かを判定し、論理値を返します。
     """
     firstbizday = first_bizday(day)
     if firstbizday == day:
@@ -116,7 +131,7 @@ def is_first_bizday(day: datetime.date):
 
 def is_last_bizday(day: datetime.date):
     """
-    day 日が、その月の最後の営業日か、否かを判定し、論理値を返します。
+    day日 が、その月の最後の営業日か、否かを判定し、論理値を返します。
     """
     lastbizday = last_bizday(day)
     if lastbizday == day:
