@@ -1,5 +1,0 @@
-[tools]
-python = "latest"
-
-[env]
-_.python.venv = ".venv"

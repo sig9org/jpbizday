@@ -1,4 +1,8 @@
-[![image](https://img.shields.io/pypi/v/jpbizday.svg)](https://pypi.org/project/jpbizday/) [![image](https://img.shields.io/pypi/l/jpbizday.svg)](https://pypi.org/project/jpbizday/) [![image](https://img.shields.io/pypi/pyversions/jpbizday.svg)](https://pypi.org/project/jpbizday/) [![image](https://img.shields.io/github/contributors/sig9org/jpbizday.svg)](https://github.com/sig9org/jpbizday/graphs/contributors)
+[![image](https://img.shields.io/pypi/v/jpbizday.svg)](https://pypi.org/project/jpbizday/)
+[![image](https://img.shields.io/pypi/l/jpbizday.svg)](https://pypi.org/project/jpbizday/)
+[![image](https://img.shields.io/pypi/pyversions/jpbizday.svg)](https://pypi.org/project/jpbizday/)
+[![image](https://img.shields.io/github/contributors/sig9org/jpbizday.svg)](https://github.com/sig9org/jpbizday/graphs/contributors)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/jpbizday?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/jpbizday)
 
 # JPBizDay
 

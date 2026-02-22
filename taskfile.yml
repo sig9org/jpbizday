@@ -9,24 +9,24 @@ tasks:
     aliases: [b]
     desc: Build
     cmds:
-      - pyinstaller build.spec
+      - uv run --dev pyinstaller build.spec
 
   format:
     aliases: [f]
     desc: Format the source code
     cmds:
-      - ruff format .
-      - ruff check . --fix
+      - uv run --dev ruff format .
+      - uv run --dev ruff check . --fix
 
   lint:
     aliases: [l]
     desc: Static analysis
     cmds:
-      - ruff check .
-      - mypy .
+      - uv run --dev ruff check .
+      - uv run --dev mypy .
 
   test:
     aliases: [t]
     desc: Test
     cmds:
-      - pytest
+      - uv run --dev pytest
